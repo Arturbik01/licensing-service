@@ -32,7 +32,7 @@ public class LicenseController {
         return ResponseEntity.ok(licenseService.createLicense(license, organizationId));
     }
 
-    @PutMapping()
+    @DeleteMapping()
     public ResponseEntity<String> deleteLicense(@PathVariable String organizationId, @RequestParam String licenseId) {
         return ResponseEntity.ok(licenseService.deleteLicense(licenseId, organizationId));
     }
