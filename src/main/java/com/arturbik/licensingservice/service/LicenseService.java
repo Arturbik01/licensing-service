@@ -1,6 +1,6 @@
 package com.arturbik.licensingservice.service;
 
-import com.arturbik.licensingservice.model.License;
+import com.arturbik.licensingservice.model.*;
 import org.springframework.stereotype.Service;
 
 import java.util.Random;
@@ -15,6 +15,7 @@ public class LicenseService {
         license.setOrganizationId(organizationId);
         license.setDescription("Software licence");
         license.setLicenseType("full");
+        license.setProductName("a");
 
         return license;
     }
@@ -45,9 +46,6 @@ public class LicenseService {
         return responseMessage;
     }
 
-    public  String deleteLicense(License license, String organizationId) {
-        return deleteLicense(license.getLicenseId(), organizationId);
-    }
 }
 
 

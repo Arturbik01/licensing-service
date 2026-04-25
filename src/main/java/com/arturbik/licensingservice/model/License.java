@@ -1,8 +1,10 @@
 package com.arturbik.licensingservice.model;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 public class License {
 
     private int id;
