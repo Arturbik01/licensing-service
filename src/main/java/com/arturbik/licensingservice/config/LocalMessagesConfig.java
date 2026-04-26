@@ -1,5 +1,6 @@
 package com.arturbik.licensingservice.config;
 
+import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ResourceBundleMessageSource;
@@ -13,15 +14,16 @@ public class LocalMessagesConfig {
     @Bean
     public SessionLocaleResolver localResolver() {
         SessionLocaleResolver localeResolver = new SessionLocaleResolver();
-        localeResolver.setDefaultLocale(Locale.US);
         return localeResolver;
     }
 
     @Bean
     public ResourceBundleMessageSource messageSource() {
         ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
-        messageSource.setBasename("messages");
-        messageSource.setUseCodeAsDefaultMessage(true);
+        messageSource.setBasenames("messages/messages");
+//        messageSource.setDefaultLocale(Locale.US);
+//        messageSource.setUseCodeAsDefaultMessage(true);
         return messageSource;
     }
+
 }
