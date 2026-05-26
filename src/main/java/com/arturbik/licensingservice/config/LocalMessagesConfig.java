@@ -14,6 +14,8 @@ public class LocalMessagesConfig {
     @Bean
     public SessionLocaleResolver localResolver() {
         SessionLocaleResolver localeResolver = new SessionLocaleResolver();
+//        localeResolver.setDefaultLocale(Locale.of("ru_RU"));
+        localeResolver.setDefaultLocale(Locale.of("en"));
         return localeResolver;
     }
 
@@ -21,8 +23,8 @@ public class LocalMessagesConfig {
     public ResourceBundleMessageSource messageSource() {
         ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
         messageSource.setBasenames("messages/messages");
-//        messageSource.setDefaultLocale(Locale.US);
-//        messageSource.setUseCodeAsDefaultMessage(true);
+        messageSource.setUseCodeAsDefaultMessage(true);
+        messageSource.setDefaultLocale(Locale.of("en"));
         return messageSource;
     }
 
