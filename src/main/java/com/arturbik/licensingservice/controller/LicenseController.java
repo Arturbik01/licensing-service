@@ -29,7 +29,7 @@ public class LicenseController {
 
         License license = licenseService.getLicense(licenseId, organizationId);
         license.add(linkTo(methodOn(LicenseController.class).getLicense(organizationId, license.getLicenseId())).withSelfRel());
-        license.add(linkTo(methodOn(LicenseController.class).createLicense(organizationId, license, null)).withRel("createLicense"));
+        license.add(linkTo(methodOn(LicenseController.class).createLicense(organizationId, license, null)).withRel("createLicense").withType("ddd"));
         license.add(linkTo(methodOn(LicenseController.class).updateLicense(organizationId, license, null)).withRel("updateLicense"));
         license.add(linkTo(methodOn(LicenseController.class).deleteLicense(organizationId, license.getLicenseId(), null)).withRel("deleteLicense"));
         return ResponseEntity.ok(license);
